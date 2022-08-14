@@ -5,6 +5,14 @@ var uppercase = []
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 var symbols = ["+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", ":","\"","\\"]
 
+function randomint(min, max) {
+  return Math.floor(math.random()*(max - min) + min)
+}
+
+function randomItem(list) {
+  return list[randomint(0, list.length -1)]
+}
+
 function generatePassword() {
   var passwordLength = window.prompt("Enter password length");
   console.log(passwordLength);
@@ -37,6 +45,14 @@ function generatePassword() {
   if (addsymbols) {
     options.push(symbols)
   }
+
+  var generatedPassword = ""
+
+  for (var i = 0; i < passwordLength; i++) {
+    var randomint = randomItem(options)
+    var randomchar = randomItem(randomint)
+  }
+  console.log(randomchar)
 
   
 }
