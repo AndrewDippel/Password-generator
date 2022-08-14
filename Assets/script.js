@@ -20,6 +20,23 @@ function generatePassword() {
   var addnumbers = window.confirm("would you like to add numbers?")
   var addsymbols = window.confirm("would you like to add symbols?")
 
+  var options = []
+
+  for (var i = 0; i <lowercase.length; i++) {
+    uppercase[i] = lowercase[i].toUpperCase()
+  }
+  if (adduppercase) {
+    options.push(uppercase)
+  }
+  if (addlowercase) {
+    options.push(lowercase)
+  }
+  if (addnumbers) {
+    options.push(numbers)
+  }
+  if (addsymbols) {
+    options.push(symbols)
+  }
 
   
 }
