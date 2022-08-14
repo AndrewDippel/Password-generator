@@ -1,18 +1,27 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-var upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var uppercase = []
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-var characters = ["+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", ":","\"","\\"]
+var symbols = ["+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", ":","\"","\\"]
 
 function generatePassword() {
   var passwordLength = window.prompt("Enter password length");
   console.log(passwordLength);
 
-  if (passwordLength <8 || passwordLength >128 || !passwordLength ){
-    alert ("please enter number between 8 and 128");
+  var passwordNum = parseInt(passwordLength)
+
+  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength  > 128 || !passwordLength ){
+    window.alert("please enter number between 8 and 128");
+    return;
   }
-  return;
+  var adduppercase = window.confirm("would you like to add uppercase letters?")
+  var addlowercase = window.confirm("would you like to add lowercase letters?")
+  var addnumbers = window.confirm("would you like to add numbers?")
+  var addsymbols = window.confirm("would you like to add symbols?")
+
+
+  
 }
 
 // Write password to the #password input
