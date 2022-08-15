@@ -6,11 +6,17 @@ var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 var symbols = ["+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", ":","\"","\\"]
 
 function randomint(min, max) {
-  return Math.floor(math.random()*(max - min) + min)
+  if (!max) {
+    max = min
+    min = 0
+  }
+
+     var rand = math.random()
+     return math.floor(min*(1 - rand) + rand*max)
 }
 
 function randomItem(list) {
-  return list[randomint(0, list.length -1)]
+  return list[randomint(0, list.length - 1)]
 }
 
 function generatePassword() {
@@ -30,7 +36,7 @@ function generatePassword() {
 
   var options = []
 
-  for (var i = 0; i <lowercase.length; i++) {
+  for (var i = 0; i < lowercase.length; i++) {
     uppercase[i] = lowercase[i].toUpperCase()
   }
   if (adduppercase) {
@@ -51,10 +57,8 @@ function generatePassword() {
   for (var i = 0; i < passwordLength; i++) {
     var randomint = randomItem(options)
     var randomchar = randomItem(randomint)
+    console.log(randomchar)
   }
-  console.log(randomchar)
-
-  
 }
 
 // Write password to the #password input
